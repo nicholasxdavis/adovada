@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adovada de Mesilla | Southern New Mexico's Premier Adovada Competition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Oswald:wght@300;400;500;600&family=Alfa+Slab+One&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        rye: ['Rye', 'cursive'],
+                        special: ['Special Elite', 'cursive'],
+                        oswald: ['Oswald', 'sans-serif'],
+                        alfa: ['Alfa Slab One', 'cursive'],
+                        bebas: ['Bebas Neue', 'sans-serif'],
+                    },
+                    colors: {
+                        'adovada-red': '#8B2E2E',
+                        'kraft-brown': '#D7C9AA',
+                        'western-tan': '#f5e7d0',
+                        'chile-dark': '#5C2018',
+                        'adobrown': '#462F23',
+                        'adolight': '#663C2C',
+                        'sunset-orange': '#8B2E2E',
+                        'desert-sand': '#EDD4B2',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-oswald bg-western-tan text-chile-dark">
+    <!-- Navigation -->
+    <nav class="bg-adobrown/90 backdrop-blur-md w-full z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-40 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="img/logo.png" alt="Adovada de Mesilla Logo" class="h-32">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#about" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">About</a>
+                        <a href="#schedule" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">Schedule</a>
+                        <a href="#location" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">Location</a>
+                        <a href="#contact" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">Become a Sponsor</a>
+                        <button class="bg-adovada-red text-white px-6 py-2 rounded-full hover:bg-chile-dark transition duration-300 font-medium">
+                            Get Tickets
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-western-tan hover:text-western focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">About</a>
+                <a href="#participate" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Participate</a>
+                <a href="#schedule" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Schedule</a>
+                <a href="#location" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Location</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Contact</a>
+                <button class="w-full bg-adovada-red text-white px-6 py-2 rounded-full hover:bg-chile-dark transition duration-300 font-medium mt-2">
+                    Register Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <section id="rules-guidelines" class="flex justify-center"> <div class="w-full md:w-3/4 lg:w-2/3"> <div class="western-card p-8 rounded-lg"> <h3 class="font-special text-2xl font-bold text-adobrown mb-6 border-b-2 border-adobrown pb-2 text-center">Event Rules (Attendees)</h3> <p class="text-adobrown mb-6 text-center">To ensure a fair, flavorful, and fun showdown, here’s how the Adovada Smackdown works:</p>
+        <div class="space-y-4 mb-8">  
+            <!-- For Competitors -->  
+            <div class="flex items-start">  
+                <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">  
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />  
+                    </svg>  
+                </div>  
+                <div>  
+                    <h4 class="font-bold text-adobrown">For Chefs</h4>  
+                    <p class="text-adobrown">  
+                        • Must use <span class="font-bold">traditional New Mexican ingredients</span> (red chile is non-negotiable!).<br>  
+                        • One signature adovada dish per competitor—no last-minute substitutions!<br>  
+                        • Prep on-site or pre-made? Your call, but freshness is key.  
+                    </p>  
+                </div>  
+            </div>  
+
+            <!-- For Judges -->  
+            <div class="flex items-start">  
+                <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">  
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />  
+                    </svg>  
+                </div>  
+                <div>  
+                    <h4 class="font-bold text-adobrown">Judging Criteria</h4>  
+                    <p class="text-adobrown">  
+                        • <span class="font-bold">Flavor</span>: Depth of chile, balance, and authenticity.<br>  
+                        • <span class="font-bold">Texture</span>: Tender pork, sauce consistency.<br>  
+                        • <span class="font-bold">Creativity</span>: Unique twists on tradition (without straying too far!).<br>  
+                        • <span class="font-bold">Presentation</span>: Feast for the eyes first!  
+                    </p>  
+                </div>  
+            </div>  
+
+            <!-- For Attendees -->  
+            <div class="flex items-start">  
+                <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">  
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />  
+                    </svg>  
+                </div>  
+                <div>  
+                    <h4 class="font-bold text-adobrown">For the Crowd</h4>  
+                    <p class="text-adobrown">  
+                        • <span class="font-bold">Voting</span>: Purchase tokens to cast votes for the People’s Choice Award.<br>  
+                        • <span class="font-bold">Samples</span>: Pace yourself—this is a marathon, not a sprint!<br>  
+                        • <span class="font-bold">Respect the Heat</span>: Some adovada may bring the fire—water stations provided!  
+                    </p>  
+                </div>  
+            </div>  
+
+            <!-- General Rules -->  
+            <div class="flex items-start">  
+                <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">  
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />  
+                    </svg>  
+                </div>  
+                <div>  
+                    <h4 class="font-bold text-adobrown">Fair Play</h4>  
+                    <p class="text-adobrown">  
+                        • No bribing judges (tempting, but no).<br>  
+                        • Keep it friendly—this is a celebration, not a chili war!<br>  
+                        • Winners must graciously accept their title (and bragging rights).  
+                    </p>  
+                </div>  
+            </div>  
+        </div>  
+
+        <p class="text-adobrown text-sm italic text-center">  
+            *FARMesilla reserves the right to remove any attendees from the event violating rules. All decisions by staff/judges are final.  
+        </p>  
+    </div>  
+</div>  
+</section>
+        <section id="rules-guidelines" class="flex justify-center"> <div class="w-full md:w-3/4 lg:w-2/3"> <div class="western-card p-8 rounded-lg"> <h3 class="font-special text-2xl font-bold text-adobrown mb-6 border-b-2 border-adobrown pb-2 text-center">The Battle Rules (Competitors)</h3> <p class="text-adobrown mb-6 text-center">To ensure a fair, flavorful, and fun showdown, here’s how the Adovada Smackdown works:</p>
+        <div class="space-y-4 mb-8">  
+            <!-- For Competitors -->  
+            <div class="flex items-start">  
+                <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">  
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />  
+                    </svg>  
+                </div>  
+                <div>  
+                    <h4 class="font-bold text-adobrown">For Chefs</h4>  
+                    <p class="text-adobrown">  
+                        • Must use <span class="font-bold">traditional New Mexican ingredients</span> (red chile is non-negotiable!).<br>  
+                        • One signature adovada dish per competitor—no last-minute substitutions!<br>  
+                        • Prep on-site or pre-made? Your call, but freshness is key.  
+                    </p>  
+                </div>  
+            </div>  
+
+            <!-- For Judges -->  
+            <div class="flex items-start">  
+                <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">  
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />  
+                    </svg>  
+                </div>  
+                <div>  
+                    <h4 class="font-bold text-adobrown">Judging Criteria</h4>  
+                    <p class="text-adobrown">  
+                        • <span class="font-bold">Flavor</span>: Depth of chile, balance, and authenticity.<br>  
+                        • <span class="font-bold">Texture</span>: Tender pork, sauce consistency.<br>  
+                        • <span class="font-bold">Creativity</span>: Unique twists on tradition (without straying too far!).<br>  
+                        • <span class="font-bold">Presentation</span>: Feast for the eyes first!  
+                    </p>  
+                </div>  
+            </div>  
+
+            <!-- For Attendees -->  
+            <div class="flex items-start">  
+                <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">  
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />  
+                    </svg>  
+                </div>  
+                <div>  
+                    <h4 class="font-bold text-adobrown">For the Crowd</h4>  
+                    <p class="text-adobrown">  
+                        • <span class="font-bold">Voting</span>: Purchase tokens to cast votes for the People’s Choice Award.<br>  
+                        • <span class="font-bold">Samples</span>: Pace yourself—this is a marathon, not a sprint!<br>  
+                        • <span class="font-bold">Respect the Heat</span>: Some adovada may bring the fire—water stations provided!  
+                    </p>  
+                </div>  
+            </div>  
+
+            <!-- General Rules -->  
+            <div class="flex items-start">  
+                <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">  
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />  
+                    </svg>  
+                </div>  
+                <div>  
+                    <h4 class="font-bold text-adobrown">Fair Play</h4>  
+                    <p class="text-adobrown">  
+                        • No bribing judges (tempting, but no).<br>  
+                        • Keep it friendly—this is a celebration, not a chili war!<br>  
+                        • Winners must graciously accept their title (and bragging rights).  
+                    </p>  
+                </div>  
+            </div>  
+        </div>  
+
+        <p class="text-adobrown text-sm italic text-center">  
+            *FARMesilla reserves the right to disqualify any competitor violating rules. All decisions by judges are final.  
+        </p>  
+    </div>  
+</div>  
+</section>
+    </main>
+
+    <!-- Footer -->
+<!-- Footer -->
+   <footer id="contact" class="bg-adobrown text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start">
+                <img src="img/logo.png" alt="Adovada de Mesilla Logo" class="h-16 mb-6">
+                <p class="text-kraft-brown mb-6">Celebrating Southern New Mexico's signature dish with a friendly Adovada competition.</p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="https://www.facebook.com/FARMesilla/" class="text-kraft-brown hover:text-white">
+                        <span class="sr-only">Facebook</span>
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/Farmesilla/?hl=en" class="text-kraft-brown hover:text-white">
+                        <span class="sr-only">Instagram</span>
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6 text-kraft-brown">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="index.html#about" class="text-kraft-brown hover:text-white">About the Event</a></li>
+                    <li><a href="index.html#participate" class="text-kraft-brown hover:text-white">How to Participate</a></li>
+                    <li><a href="index.html#schedule" class="text-kraft-brown hover:text-white">Event Schedule</a></li>
+                    <li><a href="index.html#location" class="text-kraft-brown hover:text-white">Location Details</a></li>
+                    <li><a href="faq.html" class="text-kraft-brown hover:text-white">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6 text-kraft-brown">For Competitors</h4>
+                <ul class="space-y-3">
+                    <li><a href="sponsor.html" class="text-kraft-brown hover:text-white">Become a Sponsor</a></li>
+                    <li><a href="rules.html" class="text-kraft-brown hover:text-white">Rules & Guidelines</a></li>
+                    <li><a href="register.html" class="text-kraft-brown hover:text-white">Registration Form</a></li>
+                    <li><a href="whattobring.html" class="text-kraft-brown hover:text-white">What to Bring</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6 text-kraft-brown">Contact Us</h4>
+                <address class="not-italic text-kraft-brown">
+                    <p class="mb-3">FARMesilla<br>1840 Avenida de Mesilla<br>Mesilla, NM 88005</p>
+                    <p class="mb-3">Phone: (575) 652-4626<br>Email: store@farmesilla.com</p>
+                </address>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-center md:text-left">
+            <p class="text-kraft-brown mb-4 md:mb-0">© 2025 Adovada de Mesilla by FARMesilla. All rights reserved.</p>
+            <div class="flex space-x-6 justify-center">
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adovada de Mesilla | Southern New Mexico's Premier Adovada Competition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Oswald:wght@300;400;500;600&family=Alfa+Slab+One&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        rye: ['Rye', 'cursive'],
+                        special: ['Special Elite', 'cursive'],
+                        oswald: ['Oswald', 'sans-serif'],
+                        alfa: ['Alfa Slab One', 'cursive'],
+                        bebas: ['Bebas Neue', 'sans-serif'],
+                    },
+                    colors: {
+                        'adovada-red': '#8B2E2E',
+                        'kraft-brown': '#D7C9AA',
+                        'western-tan': '#f5e7d0',
+                        'chile-dark': '#5C2018',
+                        'adobrown': '#462F23',
+                        'adolight': '#663C2C',
+                        'sunset-orange': '#8B2E2E',
+                        'desert-sand': '#EDD4B2',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-oswald bg-western-tan text-chile-dark">
+    <!-- Navigation -->
+    <nav class="bg-adobrown/90 backdrop-blur-md w-full z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-40 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="img/logo.png" alt="Adovada de Mesilla Logo" class="h-32">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#about" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">About</a>
+                        <a href="#schedule" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">Schedule</a>
+                        <a href="#location" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">Location</a>
+                        <a href="#contact" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">Become a Sponsor</a>
+                        <button class="bg-adovada-red text-white px-6 py-2 rounded-full hover:bg-chile-dark transition duration-300 font-medium">
+                            Get Tickets
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-western-tan hover:text-western focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">About</a>
+                <a href="#participate" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Participate</a>
+                <a href="#schedule" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Schedule</a>
+                <a href="#location" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Location</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Contact</a>
+                <button class="w-full bg-adovada-red text-white px-6 py-2 rounded-full hover:bg-chile-dark transition duration-300 font-medium mt-2">
+                    Register Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+               <div class="western-card p-8 rounded-lg text-center max-w-4xl mx-auto">
+                <h3 class="font-special text-2xl font-bold text-adobrown mb-6">Become a Sponsor</h3>
+                <p class="text-adobrown mb-8">Join us in celebrating New Mexico's culinary heritage by becoming a sponsor of Adovada de Mesilla. Sponsorship opportunities range from $150 to $500 and include various marketing benefits.</p>
+<button onclick="forceDownload()" class="bg-adovada-red hover:bg-chile-dark text-white px-8 py-3 rounded-full font-medium transition duration-300 shadow-lg">
+    Download Sponsor Packet
+</button>
+
+<script>
+function forceDownload() {
+    const link = document.createElement('a');
+    link.href = 'assets/sponsor.pdf';
+    link.download = 'sponsor.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+</script>
+
+            </div>
+<!-- Sponsor Section with Transparent Background -->
+<section id="become-a-sponsor" class="flex justify-center py-12 bg-transparent">
+    <div class="w-full md:w-3/4 lg:w-2/3">
+        <div class="p-8 rounded-lg border-2 border-adobrown bg-transparent">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <h3 class="font-special text-3xl font-bold text-adobrown mb-2">Sponsporship Oppurtinity</h3>
+                <p class="text-xl text-adobrown">Support the Inaugural "Adovada de Mesilla" Smackdown</p>
+            </div>
+
+            <!-- Event Overview -->
+            <div class="mb-8">
+                <h4 class="font-bold text-xl text-adobrown border-l-4 border-adovada-red pl-4 mb-4">Event Overview</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-adobrown mb-4"><strong>ADOVADA de MESILLA</strong> celebrates Southern New Mexico's culinary heritage through a friendly adovada competition, community engagement, and cultural preservation.</p>
+                        <ul class="list-disc pl-5 text-adobrown space-y-1">
+                            <li><strong>Date:</strong> Saturday, May 31, 2025</li>
+                            <li><strong>Time:</strong> 11:00 AM - 4:00 PM</li>
+                            <li><strong>Location:</strong> FARMesilla, 1840 Avenida de Mesilla, Mesilla, NM 88005</li>
+                            <li><strong>Projected Attendance:</strong> 100-200+ (food enthusiasts, tourists, NMSU students, retirees)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-adobe-light p-4 rounded-lg">
+                        <h5 class="font-bold text-adobrown mb-2">Event Goals</h5>
+                        <ul class="list-checkmark pl-5 text-adobrown space-y-1">
+                            <li>Showcase local culinary talent</li>
+                            <li>Foster community spirit</li>
+                            <li>Promote Southern NM cuisine</li>
+                            <li>Increase FARMesilla awareness</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sponsorship Benefits -->
+            <div class="mb-8">
+                <h4 class="font-bold text-xl text-adobrown border-l-4 border-adovada-red pl-4 mb-4">Sponsorship Benefits</h4>
+                <div class="grid md:grid-cols-3 gap-4 text-center">
+                    <!-- Bronze -->
+                    <div class="border border-adobrown rounded-lg p-4">
+                        <h5 class="font-bold text-adovada-red text-lg mb-2">Bronze ($100-$250)</h5>
+                        <ul class="text-adobrown text-sm space-y-1">
+                            <li>Event banner placement</li>
+                            <li>Logo on advertisements</li>
+                            <li>Social media mentions</li>
+                        </ul>
+                    </div>
+                    <!-- Silver -->
+                    <div class="border border-adobrown rounded-lg p-4 bg-adobe-light">
+                        <h5 class="font-bold text-adovada-red text-lg mb-2">Silver ($250-$500)</h5>
+                        <ul class="text-adobrown text-sm space-y-1">
+                            <li>All Bronze benefits +</li>
+                            <li>Tabling opportunity</li>
+                            <li>2 complimentary tickets</li>
+                        </ul>
+                    </div>
+                    <!-- Gold -->
+                    <div class="border border-adobrown rounded-lg p-4 bg-adobe-light">
+                        <h5 class="font-bold text-adovada-red text-lg mb-2">Gold ($500+)</h5>
+                        <ul class="text-adobrown text-sm space-y-1">
+                            <li>All Silver benefits +</li>
+                            <li>Logo on event shirt</li>
+                            <li>VIP access (5 tickets)</li>
+                            <li>Feature in event magazine</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sponsor Form -->
+            <div>
+                <h4 class="font-bold text-xl text-adobrown border-l-4 border-adovada-red pl-4 mb-4">Sponsor Sign-Up</h4>
+                <form class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="company-name" class="block text-adobrown font-medium mb-1">Company Name*</label>
+                            <input type="text" id="company-name" required class="w-full px-4 py-2 border border-adobrown rounded">
+                        </div>
+                        <div>
+                            <label for="contact-person" class="block text-adobrown font-medium mb-1">Contact Person*</label>
+                            <input type="text" id="contact-person" required class="w-full px-4 py-2 border border-adobrown rounded">
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="contact-email" class="block text-adobrown font-medium mb-1">Email*</label>
+                            <input type="email" id="contact-email" required class="w-full px-4 py-2 border border-adobrown rounded">
+                        </div>
+                        <div>
+                            <label for="contact-phone" class="block text-adobrown font-medium mb-1">Phone*</label>
+                            <input type="tel" id="contact-phone" required class="w-full px-4 py-2 border border-adobrown rounded">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-adobrown font-medium mb-2">Sponsorship Tier*</label>
+                        <div class="grid md:grid-cols-4 gap-2">
+                            <label class="flex items-center">
+                                <input type="radio" name="tier" value="bronze" class="mr-2 text-adovada-red">
+                                <span>Bronze</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="tier" value="silver" class="mr-2 text-adovada-red">
+                                <span>Silver</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="tier" value="gold" class="mr-2 text-adovada-red">
+                                <span>Gold</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="tier" value="custom" class="mr-2 text-adovada-red">
+                                <span>Custom</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="custom-details" class="block text-adobrown font-medium mb-1">Custom Sponsorship Details</label>
+                        <textarea id="custom-details" rows="2" class="w-full px-4 py-2 border border-adobrown rounded" placeholder="Describe your custom sponsorship request..."></textarea>
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit" class="w-full md:w-auto px-8 py-3 bg-adovada-red hover:bg-adobrown text-white font-bold rounded-lg transition duration-200">
+                            Submit Sponsorship
+                        </button>
+                        <p class="text-sm text-adobrown mt-2">Deadline: May 16, 2025 | Questions? Email Justin Garcia at farmstore@farmesilla.com</p>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+<!-- Footer -->
+   <footer id="contact" class="bg-adobrown text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start">
+                <img src="img/logo.png" alt="Adovada de Mesilla Logo" class="h-16 mb-6">
+                <p class="text-kraft-brown mb-6">Celebrating Southern New Mexico's signature dish with a friendly Adovada competition.</p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="https://www.facebook.com/FARMesilla/" class="text-kraft-brown hover:text-white">
+                        <span class="sr-only">Facebook</span>
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/Farmesilla/?hl=en" class="text-kraft-brown hover:text-white">
+                        <span class="sr-only">Instagram</span>
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6 text-kraft-brown">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="index.html#about" class="text-kraft-brown hover:text-white">About the Event</a></li>
+                    <li><a href="index.html#participate" class="text-kraft-brown hover:text-white">How to Participate</a></li>
+                    <li><a href="index.html#schedule" class="text-kraft-brown hover:text-white">Event Schedule</a></li>
+                    <li><a href="index.html#location" class="text-kraft-brown hover:text-white">Location Details</a></li>
+                    <li><a href="faq.html" class="text-kraft-brown hover:text-white">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6 text-kraft-brown">For Competitors</h4>
+                <ul class="space-y-3">
+                    <li><a href="sponsor.html" class="text-kraft-brown hover:text-white">Become a Sponsor</a></li>
+                    <li><a href="rules.html" class="text-kraft-brown hover:text-white">Rules & Guidelines</a></li>
+                    <li><a href="register.html" class="text-kraft-brown hover:text-white">Registration Form</a></li>
+                    <li><a href="whattobring.html" class="text-kraft-brown hover:text-white">What to Bring</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6 text-kraft-brown">Contact Us</h4>
+                <address class="not-italic text-kraft-brown">
+                    <p class="mb-3">FARMesilla<br>1840 Avenida de Mesilla<br>Mesilla, NM 88005</p>
+                    <p class="mb-3">Phone: (575) 652-4626<br>Email: store@farmesilla.com</p>
+                </address>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-center md:justify-between items-center text-center md:text-left">
+            <p class="text-kraft-brown mb-4 md:mb-0">© 2025 Adovada de Mesilla by FARMesilla. All rights reserved.</p>
+            <div class="flex space-x-6 justify-center">
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
