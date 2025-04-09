@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adovada de Mesilla | Southern New Mexico's Premier Adovada Competition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Oswald:wght@300;400;500;600&family=Alfa+Slab+One&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        rye: ['Rye', 'cursive'],
+                        special: ['Special Elite', 'cursive'],
+                        oswald: ['Oswald', 'sans-serif'],
+                        alfa: ['Alfa Slab One', 'cursive'],
+                        bebas: ['Bebas Neue', 'sans-serif'],
+                    },
+                    colors: {
+                        'adovada-red': '#8B2E2E',
+                        'kraft-brown': '#D7C9AA',
+                        'western-tan': '#f5e7d0',
+                        'chile-dark': '#5C2018',
+                        'adobrown': '#462F23',
+                        'adolight': '#663C2C',
+                        'sunset-orange': '#8B2E2E',
+                        'desert-sand': '#EDD4B2',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('');
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .chile-pattern {
+            background-image: url("");
+        }
+        .border-western {
+            border: 3px solid #663C2C;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .western-badge {
+            background: linear-gradient(135deg, #8B2E2E 0%, #5C2018 100%);
+            border: 2px solid #D7C9AA;
+            transform: rotate(-5deg);
+        }
+        .western-card {
+            background: rgba(245, 231, 208, 0.9);
+            border: 3px solid #663C2C;
+            box-shadow: 8px 8px 0 rgba(107, 60, 44, 0.2);
+            transition: all 0.3s ease;
+        }
+        .western-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 12px 12px 0 rgba(107, 60, 44, 0.3);
+        }
+        .wax-paper-bg {
+            background-color: #f5e7d0;
+            background-image: 
+        }
+        .ribbon {
+            position: absolute;
+            right: -5px; top: -5px;
+            z-index: 1;
+            overflow: hidden;
+            width: 150px; height: 150px;
+            text-align: right;
+        }
+        .ribbon span {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #FFF;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 2rem;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            width: 200px;
+            display: block;
+            background: linear-gradient(#8B2E2E 0%, #5C2018 100%);
+            box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+            position: absolute;
+            top: 40px; right: -45px;
+        }
+        .ribbon span::before {
+            content: "";
+            position: absolute; left: 0px; top: 100%;
+            z-index: -1;
+            border-left: 3px solid #5C2018;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #5C2018;
+        }
+        .ribbon span::after {
+            content: "";
+            position: absolute; right: 0px; top: 100%;
+            z-index: -1;
+            border-left: 3px solid transparent;
+            border-right: 3px solid #5C2018;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #5C2018;
+        }
+        .countdown-item {
+            background: linear-gradient(135deg, #D7C9AA 0%, #D7C9AA 100%);
+            border: 3px solid #D7C9AA;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #8B2E2E;
+            border: 4px solid #D7C9AA;
+        }
+        .timeline-connector {
+            position: absolute;
+            left: -26px;
+            top: 24px;
+            bottom: -24px;
+            width: 2px;
+            background: #8B2E2E;
+        }
+    </style>
+</head>
+<body class="font-oswald bg-western-tan text-chile-dark">
+    <!-- Navigation -->
+    <nav class="bg-adobrown/90 backdrop-blur-md fixed w-full z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-40 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="img/logo.png" alt="Adovada de Mesilla Logo" class="h-32">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#about" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">About</a>
+                        <a href="#schedule" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">Schedule</a>
+                        <a href="#location" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">Location</a>
+                        <a href="#contact" class="text-kraft-brown hover:text-adovada-red px-3 py-2 font-medium">Become a Sponsor</a>
+                        <button class="bg-adovada-red text-white px-6 py-2 rounded-full hover:bg-chile-dark transition duration-300 font-medium">
+                            Get Tickets
+                        </button>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-chile-dark hover:text-adovada-red focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">About</a>
+                <a href="#participate" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Participate</a>
+                <a href="#schedule" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Schedule</a>
+                <a href="#location" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Location</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-chile-dark hover:text-adovada-red">Contact</a>
+                <button class="w-full bg-adovada-red text-white px-6 py-2 rounded-full hover:bg-chile-dark transition duration-300 font-medium mt-2">
+                    Register Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center text-center pt-24">
+        <div class="max-w-4xl mx-auto px-6 py-24 sm:py-32 lg:px-8">
+            <div class="western-badge inline-block px-6 py-2 mb-6 rounded-full">
+                <span class="font-bebas text-xl text-kraft-brown tracking-wider">MAY 31, 2025 • MESILLA, NM</span>
+            </div>
+            <h1 class="font-rye text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 text-shadow uppercase leading-tight">
+                <span class="text-kraft-brown">Adovada</span><br>de Mesilla
+            </h1>
+            <p class="font-special text-xl md:text-2xl text-kraft-brown mb-10 max-w-2xl mx-auto text-shadow">
+                Southern New Mexico's Premier Adovada Smackdown
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-kraft-brown hover:bg-sunset-orange text-chile-dark hover:text-white px-8 py-4 rounded-full text-lg font-medium transition duration-300 border-western hover:scale-105 uppercase tracking-wider shadow-lg">
+                    <i class="fas fa-utensils mr-2"></i> Compete
+                </button>
+                <button class="bg-transparent border-2 border-kraft-brown hover:border-sunset-orange text-kraft-brown hover:text-white px-8 py-4 rounded-full text-lg font-medium transition duration-300 hover:scale-105 uppercase tracking-wider shadow-lg">
+                    <i class="fas fa-ticket-alt mr-2"></i> Attend
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+            <a href="#about" class="text-kraft-brown hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="bg-adobrown text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="font-rye text-3xl text-center mb-10 text-kraft-brown">Countdown to the Smackdown</h2>
+            <div class="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
+                <div class="countdown-item flex flex-col items-center justify-center py-6 px-4">
+                    <span id="countdown-days" class="text-chile-dark font-bebas text-4xl">00</span>
+                    <span class="text-chile-dark text-sm uppercase tracking-wider">Days</span>
+                </div>
+                <div class="countdown-item flex flex-col items-center justify-center py-6 px-4">
+                    <span id="countdown-hours" class="text-chile-dark font-bebas text-4xl">00</span>
+                    <span class="text-chile-dark text-sm uppercase tracking-wider">Hours</span>
+                </div>
+                <div class="countdown-item flex flex-col items-center justify-center py-6 px-4">
+                    <span id="countdown-minutes" class="text-chile-dark font-bebas text-4xl">00</span>
+                    <span class="text-chile-dark text-sm uppercase tracking-wider">Minutes</span>
+                </div>
+                <div class="countdown-item flex flex-col items-center justify-center py-6 px-4">
+                    <span id="countdown-seconds" class="text-chile-dark font-bebas text-4xl">00</span>
+                    <span class="text-chile-dark text-sm uppercase tracking-wider">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="wax-paper-bg py-20 text-chile-dark chile-pattern">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="font-rye text-4xl md:text-5xl font-bold text-adobrown mb-6">
+                        The <span class="text-adovada-red">Adovada</span> Showdown
+                    </h2>
+                    <p class="text-lg text-adobrown mb-6">
+                        FARMesilla presents the inaugural <strong>Adovada de Mesilla</strong>, a celebration of Southern New Mexico's most iconic dish. This friendly competition brings together the region's best cooks to showcase their unique takes on traditional adovada.
+                    </p>
+                    <p class="text-lg text-adobrown mb-8">
+                        Whether you're a competitor vying for the championship belt or a food lover ready to taste the best adovada in the Southwest, this is the event you won't want to miss!
+                    </p>
+                    <div class="western-card p-6 rounded-lg relative overflow-hidden">
+                        <div class="ribbon">
+                            <span>New Event</span>
+                        </div>
+                        <h3 class="font-special text-2xl font-bold mb-4 text-adobrown border-b-2 border-adobrown pb-2">Event Highlights</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-pepper-hot text-adovada-red mt-1 mr-3"></i>
+                                <span>Sample adovada from 20+ competitors</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-music text-adovada-red mt-1 mr-3"></i>
+                                <span>Live New Mexican music all day</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-utensils text-adovada-red mt-1 mr-3"></i>
+                                <span>Local food vendors and artisans</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-trophy text-adovada-red mt-1 mr-3"></i>
+                                <span>Grand Prize and People's Choice awards</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-glass-whiskey text-adovada-red mt-1 mr-3"></i>
+                                <span>Margarita and local beer garden</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border-western transform rotate-1 hover:rotate-0 transition duration-500">
+                        <img src="" alt="Adovada dish" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chile-dark/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="font-rye text-3xl font-bold text-shadow">Authentic New Mexican Flavors</h3>
+                        </div>
+                    </div>
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="relative rounded-lg overflow-hidden shadow-md h-40 border-western transform -rotate-1 hover:rotate-0 transition duration-500">
+                            <img src="" alt="Chile peppers" class="w-full h-full object-cover">
+                        </div>
+                        <div class="relative rounded-lg overflow-hidden shadow-md h-40 border-western transform rotate-1 hover:rotate-0 transition duration-500">
+                            <img src="" alt="Cooking competition" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="wax-paper-bg py-20 text-chile-dark">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-rye text-4xl md:text-5xl font-bold text-adobrown mb-4">Event <span class="text-adobrown">Schedule</span></h2>
+                <p class="max-w-2xl mx-auto text-adobrown">A day full of flavor and fun</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-kraft-brown/10 p-8 rounded-lg border-western">
+                <!-- Time 1 -->
+                <div class="mb-8 pb-8 border-b border-adobrown/30 relative">
+                    <div class="absolute -left-4 top-0 bg-adovada-red rounded-full w-8 h-8 border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <span class="bg-adobrown text-white px-3 py-1 rounded-full text-sm font-medium">10:00 AM</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="font-special text-xl font-bold text-adobrown mb-2">Competitor Check-In</h4>
+                            <p class="text-adobrown mb-2">All competing teams must check in and set up their stations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Time 2 -->
+                <div class="mb-8 pb-8 border-b border-adobrown/30 relative">
+                    <div class="absolute -left-4 top-0 bg-adovada-red rounded-full w-8 h-8 border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <span class="bg-adobrown text-white px-3 py-1 rounded-full text-sm font-medium">11:00 AM</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="font-special text-xl font-bold text-adobrown mb-2">Event Opens to Public</h4>
+                            <p class="text-adobrown mb-2">Gates open! Enjoy live music, local vendors, and food/drink offerings.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Time 3 -->
+                <div class="mb-8 pb-8 border-b border-adovada-red/30 relative">
+                    <div class="absolute -left-4 top-0 bg-adovada-red rounded-full w-8 h-8 border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <span class="bg-adobrown text-white px-3 py-1 rounded-full text-sm font-medium">12:00 PM</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="font-special text-xl font-bold text-adobrown mb-2">Cooking Begins</h4>
+                            <p class="text-adobrown mb-2">Competitors start preparing their Adovada dishes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Time 4 -->
+                <div class="mb-8 pb-8 border-b border-adovada-red/30 relative">
+                    <div class="absolute -left-4 top-0 bg-adovada-red rounded-full w-8 h-8 border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <span class="bg-adobrown text-white px-3 py-1 rounded-full text-sm font-medium">2:00 PM</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="font-special text-xl font-bold text-adobrown mb-2">People's Choice Tasting</h4>
+                            <p class="text-adobrown mb-2">Public tasting begins - cast your vote for the People's Choice Award!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Time 5 -->
+                <div class="mb-8 pb-8 border-b border-adovada-red/30 relative">
+                    <div class="absolute -left-4 top-0 bg-adovada-red rounded-full w-8 h-8 border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <span class="bg-adobrown text-white px-3 py-1 rounded-full text-sm font-medium">2:30 PM</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="font-special text-xl font-bold text-adobrown mb-2">Judging Begins</h4>
+                            <p class="text-adobrown mb-2">Our panel of expert judges samples each competitor's Adovada.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Time 6 -->
+                <div class="relative">
+                    <div class="absolute -left-4 top-0 bg-adovada-red rounded-full w-8 h-8 border-4 border-white"></div>
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <span class="bg-adobrown text-white px-3 py-1 rounded-full text-sm font-medium">3:30 PM</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="font-special text-xl font-bold text-adobrown mb-2">Awards Ceremony</h4>
+                            <p class="text-adobrown mb-2">Winners announced for both Grand Award and People's Choice.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Participate Section -->
+    <section id="participate" class="wax-paper-bg py-20 text-chile-dark">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-rye text-4xl md:text-5xl font-bold text-adobrown mb-4">How to Participate</span></h2>
+                <p class="max-w-2xl mx-auto text-adobrown">Join the competition or attend as a guest</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="western-card p-8 rounded-lg">
+                    <h3 class="font-special text-2xl font-bold text-adobrown mb-6 border-b-2 border-adobrown pb-2">For Competitors</h3>
+                    <p class="text-adobrown mb-6">Show off your adovada skills and compete for prizes and glory!</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">
+                                <span>1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Register Your Team</h4>
+                                <p class="text-adobrown">Complete the registration form and pay the $50 entry fee by May 1, 2025.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">
+                                <span>2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Prepare Your Ingredients</h4>
+                                <p class="text-adobrown">All competitors must provide their own ingredients and cooking equipment.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">
+                                <span>3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Cook On-Site</h4>
+                                <p class="text-adobrown">Prepare your adovada at the event following all competition rules.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">
+                                <span>4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Serve & Impress</h4>
+                                <p class="text-adobrown">Present your dish to judges and attendees for tasting and voting.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-adovada-red hover:bg-chile-dark text-white px-6 py-3 rounded-full font-medium transition duration-300 shadow-lg">
+                        Register to Compete
+                    </button>
+                </div>
+                
+                <div class="western-card p-8 rounded-lg">
+                    <h3 class="font-special text-2xl font-bold text-adobrown mb-6 border-b-2 border-adobrown pb-2">For Attendees</h3>
+                    <p class="text-adobrown mb-6">Come taste amazing adovada and enjoy a day of food, music, and fun!</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Get Your Tickets</h4>
+                                <p class="text-adobrown">General admission tickets include all tastings, live music, and access to vendors.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Taste & Vote</h4>
+                                <p class="text-adobrown">Sample adovada from all competitors and vote for your favorite.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Enjoy the Festivities</h4>
+                                <p class="text-adobrown">Live music, local vendors, and a margarita garden will keep you entertained.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-adovada-red text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Celebrate the Winners</h4>
+                                <p class="text-adobrown">Cheer on your favorites during the awards ceremony.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-adovada-red hover:bg-chile-dark text-white px-6 py-3 rounded-full font-medium transition duration-300 shadow-lg">
+                        Buy Tickets Now
+                    </button>
+                </div>
+            </div>
+            
+            <div class="western-card p-8 rounded-lg">
+                <h3 class="font-special text-2xl font-bold text-adobrown mb-6 border-b-2 border-adobrown pb-2">Competition Rules</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg text-adobrown mb-4">General Requirements</h4>
+                        <ul class="space-y-3 text-adobrown">
+                            <li class="flex items-start">
+                                <i class="fas fa-pepper-hot text-adovada-red mt-1 mr-3"></i>
+                                <span>All adovada must be prepared on-site the day of the event</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-pepper-hot text-adovada-red mt-1 mr-3"></i>
+                                <span>Each competitor must prepare enough for at least 200 tasting portions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-pepper-hot text-adovada-red mt-1 mr-3"></i>
+                                <span>Traditional New Mexican red chile must be the primary flavor</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-pepper-hot text-adovada-red mt-1 mr-3"></i>
+                                <span>Pork is the required protein (vegetarian options may compete in a separate category)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-adobrown mb-4">Judging Criteria</h4>
+                        <ul class="space-y-3 text-adobrown">
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-adovada-red mt-1 mr-3"></i>
+                                <span>Flavor (balance, depth, authenticity) - 40 points</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-adovada-red mt-1 mr-3"></i>
+                                <span>Texture and tenderness - 20 points</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-adovada-red mt-1 mr-3"></i>
+                                <span>Presentation and creativity - 20 points</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star text-adovada-red mt-1 mr-3"></i>
+                                <span>Adherence to tradition with innovative twist - 20 points</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Location Section -->
+<section class="wax-paper-bg py-20 text-chile-dark">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="font-rye text-4xl md:text-5xl font-bold text-adobrown mb-6">
+                        Event <span class="text-adobrown">Location</span>
+                    </h2>
+                    <p class="text-lg text-adobrown mb-6">
+                        The Adovada de Mesilla Showdown takes place at FARMesilla, a beautiful agricultural and culinary hub in the heart of historic Mesilla, New Mexico.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-adovada-red mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Address</h4>
+                                 <p class="text-adobrown">FARMesilla<br>1840 Avenida de Mesilla<br>Mesilla, NM 88005</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-adovada-red mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Contact</h4>
+                                <p class="text-adobrown">Phone: (575) 652-4626<br>Email: info@farmesilla.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-adovada-red mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <div>
+                                <h4 class="font-bold text-adobrown">Date & Time</h4>
+                                 <p class="text-adobrown">Saturday, May 31, 2025<br>11:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bg-adobrown hover:bg-chile-dark text-white px-8 py-3 rounded-full font-medium transition duration-300">
+                        Get Directions
+                    </button>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-xl h-96 border-western">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3363.575280864485!2d-106.80501592427064!3d32.54121707372292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86de3a1a5c0b5a4b%3A0x4a9a1b6d9c0b5a4b!2s1840%20Avenida%20de%20Mesilla%2C%20Mesilla%2C%20NM%2088005!5e0!3m2!1sen!2sus!4v1688752345678!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="py-20 bg-adobrown text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-rye text-4xl md:text-5xl font-bold text-kraft-brown mb-4">Our Sponsors</span></h2>
+                <p class="max-w-2xl mx-auto text-kraft-brown">Supporting Southern New Mexico's culinary traditions</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="bg-white/10 p-6 rounded-lg flex items-center justify-center h-32">
+                    <img src="https://via.placeholder.com/150x80?text=SPONSOR+1" alt="Sponsor 1" class="max-h-16">
+                </div>
+                <div class="bg-white/10 p-6 rounded-lg flex items-center justify-center h-32">
+                    <img src="https://via.placeholder.com/150x80?text=SPONSOR+2" alt="Sponsor 2" class="max-h-16">
+                </div>
+                <div class="bg-white/10 p-6 rounded-lg flex items-center justify-center h-32">
+                    <img src="https://via.placeholder.com/150x80?text=SPONSOR+3" alt="Sponsor 3" class="max-h-16">
+                </div>
+                <div class="bg-white/10 p-6 rounded-lg flex items-center justify-center h-32">
+                    <img src="https://via.placeholder.com/150x80?text=SPONSOR+4" alt="Sponsor 4" class="max-h-16">
+                </div>
+            </div>
+            
+            <div class="western-card p-8 rounded-lg text-center max-w-4xl mx-auto">
+                <h3 class="font-special text-2xl font-bold text-adobrown mb-6">Become a Sponsor</h3>
+                <p class="text-adobrown mb-8">Join us in celebrating New Mexico's culinary heritage by becoming a sponsor of Adovada de Mesilla. Sponsorship opportunities range from $150 to $500 and include various marketing benefits.</p>
+                <button class="bg-adovada-red hover:bg-chile-dark text-white px-8 py-3 rounded-full font-medium transition duration-300 shadow-lg">
+                    Download Sponsor Packet
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="font-rye text-4xl md:text-5xl font-bold text-white mb-6">Ready to Join the <span class="text-kraft-brown">Adovada</span> Celebration?</h2>
+            <p class="text-xl text-kraft-brown mb-10 max-w-2xl mx-auto">Whether you want to compete, attend, or sponsor, we'd love to have you be part of this exciting new event!</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-kraft-brown hover:bg-sunset-orange text-chile-dark hover:text-white px-8 py-4 rounded-full text-lg font-medium transition duration-300 border-western hover:scale-105 uppercase tracking-wider shadow-lg">
+                    Register to Compete
+                </button>
+                <button class="bg-transparent border-2 border-kraft-brown hover:border-sunset-orange text-kraft-brown hover:text-white px-8 py-4 rounded-full text-lg font-medium transition duration-300 hover:scale-105 uppercase tracking-wider shadow-lg">
+                    Get Tickets Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer id="contact" class="bg-adobrown text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <img src="img/logo.png" alt="Adovada de Mesilla Logo" class="h-16 mb-6">
+                    <p class="text-kraft-brown mb-6">Celebrating Southern New Mexico's signature dish with a friendly Adovada competition.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-kraft-brown hover:text-white">
+                            <span class="sr-only">Facebook</span>
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-kraft-brown hover:text-white">
+                            <span class="sr-only">Instagram</span>
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-kraft-brown">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-kraft-brown hover:text-white">About the Event</a></li>
+                        <li><a href="#participate" class="text-kraft-brown hover:text-white">How to Participate</a></li>
+                        <li><a href="#schedule" class="text-kraft-brown hover:text-white">Event Schedule</a></li>
+                        <li><a href="#location" class="text-kraft-brown hover:text-white">Location Details</a></li>
+                        <li><a href="#" class="text-kraft-brown hover:text-white">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-kraft-brown">For Competitors</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-kraft-brown hover:text-white">Rules & Guidelines</a></li>
+                        <li><a href="#" class="text-kraft-brown hover:text-white">Registration Form</a></li>
+                        <li><a href="#" class="text-kraft-brown hover:text-white">What to Bring</a></li>
+                        <li><a href="#" class="text-kraft-brown hover:text-white">Judging Criteria</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-kraft-brown">Contact Us</h4>
+                    <address class="not-italic text-kraft-brown">
+                        <p class="mb-3">FARMesilla<br>1840 Avenida de Mesilla<br>Mesilla, NM 88005</p>
+                        <p class="mb-3">Phone: (575) 652-4626<br>Email: info@farmesilla.com</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-kraft-brown mb-4 md:mb-0">© 2025 Adovada de Mesilla. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-kraft-brown hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-kraft-brown hover:text-white text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Countdown timer
+        function updateCountdown() {
+            const eventDate = new Date('May 31, 2025 11:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown-days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('countdown-hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').innerHTML = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown').innerHTML = "EVENT IN PROGRESS!";
+            }
+        }
+        
+        updateCountdown();
+        const countdownTimer = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
